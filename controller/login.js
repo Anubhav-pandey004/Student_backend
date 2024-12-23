@@ -40,7 +40,8 @@ const login=async(req,res)=>{
 
             const tokenOption = {
                 httpOnly : true,
-                secure:true
+                secure:true,
+                sameSite: 'None',
             }
             console.log(token,tokenOption);
             //cookie, passing token in cookie
