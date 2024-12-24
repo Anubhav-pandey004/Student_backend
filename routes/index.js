@@ -16,6 +16,7 @@ const verifyanswer = require('../controller/verifyanswer')
 const markVerify = require('../controller/markVerify')
 const getAnswer = require('../controller/getAnswer')
 const getQuestion = require('../controller/getQuestion')
+const deletePost = require('../controller/deletePost')
 
 router
     .route("/signup")
@@ -75,6 +76,10 @@ router
 
 router
     .route("/getPosts")
-    .get(wrapAsync(getQuestion))    
+    .post(wrapAsync(getQuestion))   
+    
+router
+    .route("/deletePost")
+    .post(authToken, wrapAsync(deletePost))    
 
 module.exports=router 
